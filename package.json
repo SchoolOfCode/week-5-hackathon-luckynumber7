@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.13.1"
+  },
+  "name": "week-5-hackathon-luckynumber7",
+  "version": "1.0.0",
+  "description": "Feel free to delete this and start from scratch.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
