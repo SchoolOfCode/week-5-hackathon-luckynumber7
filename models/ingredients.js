@@ -7,13 +7,13 @@ export async function fetchAllIngredients() {
 }
 
 // Fetch ingredients by recipe ID
-export async function fetchIngredientsByRecipeId(recipe_id) {
+export async function fetchIngredientsById(recipe_id) {
   const result = await pool.query('SELECT * FROM ingredients WHERE recipe_id = $1', [recipe_id]);
   return result.rows;
 }
 
 // Insert a new ingredient into the ingredients table
-export async function insertIngredient(recipe_id, ingredient_name, quantity, measurement_unit) {
+export async function insertIngredients(recipe_id, ingredient_name, quantity, measurement_unit) {
   const result = await pool.query(
     'INSERT INTO ingredients (recipe_id, ingredient_name, quantity, measurement_unit) VALUES ($1, $2, $3, $4) RETURNING *',
     [recipe_id, ingredient_name, quantity, measurement_unit]
@@ -22,7 +22,7 @@ export async function insertIngredient(recipe_id, ingredient_name, quantity, mea
 }
 
 // Modify an existing ingredient by its ID
-export async function modifyIngredientById(id, recipe_id, ingredient_name, quantity, measurement_unit) {
+export async function modifyIngredientsById(id, recipe_id, ingredient_name, quantity, measurement_unit) {
   const result = await pool.query(
     'UPDATE ingredients SET recipe_id = $1, ingredient_name = $2, quantity = $3, measurement_unit = $4 WHERE id = $5 RETURNING *',
     [recipe_id, ingredient_name, quantity, measurement_unit, id]
@@ -31,7 +31,7 @@ export async function modifyIngredientById(id, recipe_id, ingredient_name, quant
 }
 
 // Remove an ingredient by its ID
-export async function removeIngredientById(id) {
+export async function removeIngredientsById(id) {
   const result = await pool.query('DELETE FROM ingredients WHERE id = $1 RETURNING *', [id]);
   return result.rows[0]; // Return the deleted ingredient
 }

@@ -1,6 +1,12 @@
 // Import the pg (node-postgres) library
 import pg from "pg";
 
+import dotenv from 'dotenv';
+
+// Load environment variables from the .env file
+dotenv.config();
+
+
 // Retrieve the database connection string from environment variables
 const connectionString = process.env.DB_CONNECTION_STRING;
 
@@ -19,3 +25,4 @@ export const pool = new pg.Pool({
     rejectUnauthorized: false, // Use with caution
   },
 });
+

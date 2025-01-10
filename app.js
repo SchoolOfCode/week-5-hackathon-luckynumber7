@@ -2,7 +2,7 @@
 import express from "express";
 import morgan from "morgan";
 
-import recipesRouter from "./routes/books.js";
+import recipesRouter from "./routes/recipes.js";
 import ingredientsRouter from "./routes/ingredients.js";
 
 // Initialize the express app
